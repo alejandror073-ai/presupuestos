@@ -1,0 +1,355 @@
+/* Fuente principal */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezado principal */
+header {
+  background: linear-gradient(135deg, #007bff, #0056d6);
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Caja principal */
+.container {
+  max-width: 900px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+/* Tarjeta de información */
+.info-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h5 {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  margin: 4px 0;
+}
+
+/* Títulos */
+h4 {
+  color: #0048b0;
+  font-weight: 600;
+  border-left: 5px solid #0d6efd;
+  padding-left: 10px;
+}
+
+/* Tabla */
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.table thead th {
+  background-color: #0d6efd !important;
+  color: white !important;
+  font-weight: 500;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table td input {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  width: 100%;
+  outline: none;
+}
+
+.table td input:focus {
+  background-color: #eaf2ff;
+  border-radius: 5px;
+}
+
+/* Botones */
+button.btn {
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón principal */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #084bcc;
+}
+
+/* Botón info personalizado */
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+/* Totales */
+.total-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.total-box p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.total-box span {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+/* Footer (si agregas en el futuro) */
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
+/* === Tarjeta general === */
+.info-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* === Contenedor de columnas === */
+.info-box .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* columnas simétricas */
+  align-items: start;
+  gap: 0;
+  position: relative;
+}
+
+/* === Línea divisoria central === */
+.info-box .row::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 1px;
+  background-color: #d6e2ff;
+  transform: translateX(-50%);
+}
+
+/* === Columnas === */
+.info-box .col-md-6 {
+  padding: 0 40px;
+}
+
+/* === Títulos === */
+.info-box h5 {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* === Textos e inputs === */
+.info-box p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.info-box b {
+  min-width: 90px;
+  color: #111;
+}
+
+.info-box input {
+  border: none;
+  border-bottom: 1.5px solid #e0e0e0;
+  background-color: transparent;
+  width: 65%;
+  color: #222;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  padding: 2px 4px;
+}
+
+.info-box input:disabled {
+  border-bottom: 1.5px solid transparent;
+  color: #111;
+}
+
+.info-box input:focus {
+  border-bottom: 1.8px solid #0d6efd;
+  outline: none;
+}
+
+/* === Botón Modificar Datos === */
+#btnEditar {
+  margin-top: 20px;
+  background-color: #ffc107;
+  border: none;
+  color: #222;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+#btnEditar:hover {
+  background-color: #e0a800;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .info-box .row {
+    grid-template-columns: 1fr;
+  }
+
+  .info-box .row::after {
+    display: none;
+  }
+
+  .info-box .col-md-6 {
+    padding: 10px 15px;
+  }
+
+  .info-box h5 {
+    text-align: center;
+  }
+}
+
+/* === Ajustes generales de espaciado y centrado === */
+body {
+  background-color: #f8fafc;
+  padding: 30px 50px; /* 🔧 margen lateral general */
+}
+
+/* Centrar el header y separarlo */
+header {
+  text-align: center;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 15px 0;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+/* === Caja de información (cliente/empresa) === */
+.info-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 50px; /* 🔧 más espacio interno */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 0 auto 2rem auto;
+  max-width: 1200px; /* 🔧 limita el ancho total */
+}
+
+/* === Sección de servicios === */
+.container {
+  max-width: 1200px; /* 🔧 centrado del contenido */
+  margin: 0 auto;
+}
+
+/* === Tabla === */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #0d6efd !important;
+  color: white !important;
+  text-align: center;
+  font-weight: 600;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+/* === Botones principales === */
+.text-center button {
+  margin: 10px 10px;
+}
+
+/* === Totales === */
+.total-box {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: 60px; /* 🔧 ya no tan pegado al borde */
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+}
+
+.total-box p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.total-box p:last-child {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+/* === Responsive: en pantallas pequeñas === */
+@media (max-width: 768px) {
+  body {
+    padding: 10px 15px;
+  }
+  .info-box, .container {
+    max-width: 100%;
+    padding: 20px;
+  }
+  .total-box {
+    margin: 20px auto;
+  }
+}
