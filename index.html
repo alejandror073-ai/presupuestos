@@ -12,6 +12,10 @@
   <header class="bg-primary text-white text-center py-3 fs-4 fw-bold shadow">
     A-R SERVICIOS — Sistema de Presupuestos
   </header>
+  <div class="text-end p-2">
+    <button class="btn btn-danger btn-sm" onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+
 
   <div class="info-box">
   <div class="row align-items-center">
@@ -41,7 +45,6 @@
       <thead class="table-primary text-center">
         <tr>
           <th>Descripción</th>
-          <th>Unidad</th>
           <th>Cantidad</th>
           <th>Precio Unitario</th>
           <th>Subtotal</th>
@@ -50,7 +53,6 @@
       <tbody>
         <tr>
           <td><input type="text" class="form-control text-center" placeholder="Ej: Poda de árboles"></td>
-          <td><input type="text" class="form-control text-center" placeholder="Unidad"></td>
           <td><input type="number" class="form-control text-center" min="0" value="0" oninput="calcularTotales()"></td>
           <td><input type="number" class="form-control text-center" min="0" value="0" oninput="calcularTotales()"></td>
           <td><input type="text" class="form-control text-center" readonly></td>
@@ -90,7 +92,6 @@
       const fila = document.createElement("tr");
       fila.innerHTML = `
         <td><input type="text" class="form-control text-center" placeholder="Descripción"></td>
-        <td><input type="text" class="form-control text-center" placeholder="Unidad"></td>
         <td><input type="number" class="form-control text-center" min="0" value="0" oninput="calcularTotales()"></td>
         <td><input type="number" class="form-control text-center" min="0" value="0" oninput="calcularTotales()"></td>
         <td><input type="text" class="form-control text-center" readonly></td>`;
@@ -133,7 +134,6 @@
         const c = fila.querySelectorAll("input");
         datos.push({
           desc: c[0].value,
-          unidad: c[1].value,
           cantidad: c[2].value,
           precio: c[3].value
         });
@@ -150,7 +150,6 @@
         const fila = document.createElement("tr");
         fila.innerHTML = `
           <td><input type="text" class="form-control text-center" value="${d.desc}"></td>
-          <td><input type="text" class="form-control text-center" value="${d.unidad}"></td>
           <td><input type="number" class="form-control text-center" value="${d.cantidad}" oninput="calcularTotales()"></td>
           <td><input type="number" class="form-control text-center" value="${d.precio}" oninput="calcularTotales()"></td>
           <td><input type="text" class="form-control text-center" readonly></td>`;
@@ -196,7 +195,7 @@
 
       doc.autoTable({
         startY: 45,
-        head: [["Descripción", "Unidad", "Cant.", "Precio", "Subtotal"]],
+        head: [["Descripción", "Cant.", "Precio", "Subtotal"]],
         body: data,
         theme: "grid"
       });
@@ -247,4 +246,15 @@ window.addEventListener("load", () => {
 
   </script>
 </body>
+<script>
+  if (!localStorage.getItem("usuarioLogeado")) {
+    window.location.href = "login.html";
+  }
+  function cerrarSesion() {
+    localStorage.removeItem("usuarioLogeado");
+    window.location.href = "login.html";
+  }
+
+</script>
+
 </html>
