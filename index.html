@@ -12,9 +12,6 @@
   <header class="bg-primary text-white text-center py-3 fs-4 fw-bold shadow">
     A-R SERVICIOS — Sistema de Presupuestos
   </header>
-  <div class="text-end p-2">
-    <button class="btn btn-danger btn-sm" onclick="cerrarSesion()">Cerrar Sesión</button>
-  </div>
 
 
   <div class="info-box">
@@ -246,15 +243,4 @@ window.addEventListener("load", () => {
 
   </script>
 </body>
-<script>
-  if (!localStorage.getItem("usuarioLogeado")) {
-    window.location.href = "login.html";
-  }
-  function cerrarSesion() {
-    localStorage.removeItem("usuarioLogeado");
-    window.location.href = "login.html";
-  }
-
-</script>
-
 </html>
